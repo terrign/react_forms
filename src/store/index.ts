@@ -1,6 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import controlledFormReducer from './controlled.slice';
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  controlledFormReducer,
+});
 
 const store = configureStore({
   reducer,
