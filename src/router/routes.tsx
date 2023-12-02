@@ -1,14 +1,15 @@
 import { RouteObject } from 'react-router-dom';
-import MainPage from '../pages/Main';
+import MainPage from '../pages/MainPage';
 import ControlledFormPage from '../pages/ControlledForm';
 import UnControlledFormPage from '../pages/UnControlledForm';
 import PageNotFound from '../pages/404';
 import ErrorPage from '../pages/ErrorPage';
+import Root from '../pages/Root';
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <MainPage />,
+    element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -18,6 +19,10 @@ const routes: RouteObject[] = [
       {
         path: '/uncontrolled',
         element: <UnControlledFormPage />,
+      },
+      {
+        path: '/main',
+        element: <MainPage />,
       },
     ],
   },

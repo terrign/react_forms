@@ -8,7 +8,7 @@ function Navigation() {
     <nav>
       <ul className={styles.navList} style={flex}>
         <li>
-          <NavLink to="/">Main</NavLink>
+          <NavLink to="/main">Main</NavLink>
         </li>
         <li>
           <NavLink to="/controlled">Controlled Form</NavLink>

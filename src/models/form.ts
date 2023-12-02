@@ -9,4 +9,5 @@ export interface FormTypes extends FieldValues {
   acceptTC: boolean;
   gender: 'male' | 'female' | 'helicopter' | string;
   country?: string;
+  image?: string;
 }

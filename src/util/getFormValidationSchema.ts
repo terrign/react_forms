@@ -36,7 +36,7 @@ const getFormValidationSchema = () =>
       .test('passwords-match', "Passwords don't match", function (value) {
         return this.parent.password === value;
       })
-      .required(),
+      .required(' '),
     acceptTC: yup
       .boolean()
       .test({

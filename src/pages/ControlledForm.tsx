@@ -1,5 +1,7 @@
+import ControlledForm from '../components/ControlledForm';
+
 function ControlledFormPage() {
-  return <div>ControlledForm</div>;
+  return <ControlledForm />;
 }
 
 export default ControlledFormPage;

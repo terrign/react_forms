@@ -1,0 +1,61 @@
+.form {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form input {
+  width: 100%;
+}
+
+label {
+  width: 100%;
+}
+
+.form div {
+  width: 100%;
+}
+
+.form span {
+  width: 100%;
+}
+
+.form span {
+  display: flex;
+  position: relative;
+  height: 30px;
+}
+
+.form label,
+button {
+  user-select: none;
+}
+
+.form button {
+  position: relative;
+  align-self: flex-end;
+}
+
+.form span::after {
+  content: attr(data-error);
+  position: absolute;
+  line-height: 15px;
+  top: 100%;
+  left: 0px;
+  font-size: 0.7rem;
+  color: rgb(250, 120, 120);
+}
+
+.radioGroup > label {
+  width: auto;
+}
+
+.radioGroup input[type='radio'] {
+  display: inline;
+  width: auto;
+}
+
+.fieldset {
+  width: 100%;
+  border: 1px solid rgb(131, 126, 126);
+}

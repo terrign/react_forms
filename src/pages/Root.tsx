@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Layout from '../components/Layout';
 
-function MainPage() {
+function Root() {
   return (
     <Layout>
       <Outlet />
@@ -9,4 +9,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default Root;
