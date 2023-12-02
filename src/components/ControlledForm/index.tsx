@@ -32,7 +32,7 @@ function ControlledForm() {
   const onSubmit: SubmitHandler<FormTypes> = () => {
     dispatch(submit());
     reset();
-    navigate('/main');
+    navigate('/');
   };
 
   const onChange = () => dispatch(setFormValues(getValues()));

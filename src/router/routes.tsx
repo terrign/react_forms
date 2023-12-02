@@ -21,7 +21,7 @@ const routes: RouteObject[] = [
         element: <UnControlledFormPage />,
       },
       {
-        path: '/main',
+        path: '/',
         element: <MainPage />,
       },
     ],
