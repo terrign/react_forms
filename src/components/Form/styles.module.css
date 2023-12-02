@@ -4,12 +4,13 @@
   max-width: 600px;
 }
 
-.form input {
+.form input:not([type='radio']) {
   width: 100%;
 }
 
 label {
   width: 100%;
+  text-wrap: nowrap;
 }
 
 .form div {
@@ -37,6 +38,19 @@ button {
 }
 
 .form span::after {
+  content: attr(data-error);
+  position: absolute;
+  line-height: 15px;
+  top: 100%;
+  left: 0px;
+  font-size: 0.7rem;
+  color: rgb(250, 120, 120);
+}
+.terms {
+  position: relative;
+  text-wrap: pretty;
+}
+.terms::after {
   content: attr(data-error);
   position: absolute;
   line-height: 15px;

@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import controlledFormReducer from './controlled.slice';
+import controlledForm from './controlled.slice';
+import uncontrolledForm from './uncontrolled.slice';
 
 const reducer = combineReducers({
-  controlledFormReducer,
+  controlledForm,
+  uncontrolledForm,
 });
 
 const store = configureStore({

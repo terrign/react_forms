@@ -42,7 +42,7 @@ const getFormValidationSchema = () =>
       .test({
         name: 'Must-be-true',
         test: (value) => value,
-        message: '',
+        message: 'Please accept Terms & Conditions',
       })
       .required(),
     gender: yup.string().required('Please specify your gender'),

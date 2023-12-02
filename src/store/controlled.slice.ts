@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { FormTypes } from '../models/form';
+import { INITIAL_FORM_VALUES } from '../components/Form/initialFormValues';
 
 interface ControlledFormSlice {
   formValues: FormTypes;
@@ -9,34 +10,17 @@ interface ControlledFormSlice {
     image: string;
   };
 }
-
 const initialState: ControlledFormSlice = {
-  formValues: {
-    name: '',
-    age: '' as unknown as number,
-    email: '',
-    password: '',
-    confirmPassword: '',
-    acceptTC: false,
-    gender: '',
-  },
+  formValues: INITIAL_FORM_VALUES,
   image: '',
   prevResult: {
-    formValues: {
-      name: '',
-      age: '' as unknown as number,
-      email: '',
-      password: '',
-      confirmPassword: '',
-      acceptTC: false,
-      gender: '',
-    },
+    formValues: INITIAL_FORM_VALUES,
     image: '',
   },
 };
 
-export const formSlice = createSlice({
-  name: 'form',
+export const controlledFormSlice = createSlice({
+  name: 'controlledForm',
   initialState,
   reducers: {
     setFormValues: (state: ControlledFormSlice, action: PayloadAction<FormTypes>) => {
@@ -48,14 +32,14 @@ export const formSlice = createSlice({
     submit: (state: ControlledFormSlice) => {
       state.prevResult.formValues = state.formValues;
       state.prevResult.image = state.image;
-      state.formValues = initialState.formValues;
+      state.formValues = INITIAL_FORM_VALUES;
       state.image = '';
     },
   },
 });
 
-export const { setFormValues, setImage, submit } = formSlice.actions;
+export const { setFormValues, setImage, submit } = controlledFormSlice.actions;
 
-const controlledFormReducer = formSlice.reducer;
+const controlledForm = controlledFormSlice.reducer;
 
-export default controlledFormReducer;
+export default controlledForm;

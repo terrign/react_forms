@@ -1,27 +1,35 @@
 import { useRef } from 'react';
 
 import Flex from '../../UI/Flex';
-import { setImage } from '../../store/controlled.slice';
+import { setImage as setControlledImage } from '../../store/controlled.slice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import convertBase64 from '../../util/convertBase64';
 import styles from './styles.module.css';
+import { setImage as setUncontrolledImage } from '../../store/uncontrolled.slice';
 
-function ImageUploader() {
+function ImageUploader({ isControlled }: { isControlled: boolean }) {
   const dispatch = useAppDispatch();
-  const image = useAppSelector((state) => state.controlledFormReducer.image);
+  const image = useAppSelector((state) => (isControlled ? state.controlledForm.image : state.uncontrolledForm.image));
+
   const ref = useRef<HTMLInputElement>(null);
 
   const onChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
-    if (!files) return;
+    if (!files) {
+      return;
+    }
     const base = await convertBase64(files[0]);
-    if (!base) return;
-    dispatch(setImage(base));
+    if (!base) {
+      return;
+    }
+    isControlled ? dispatch(setControlledImage(base)) : dispatch(setUncontrolledImage(base));
   };
 
   const removeImage = () => {
-    dispatch(setImage(''));
-    if (ref.current) ref.current.value = '';
+    isControlled ? dispatch(setControlledImage('')) : dispatch(setUncontrolledImage(''));
+    if (ref.current) {
+      ref.current.value = '';
+    }
   };
 
   return (

@@ -1,10 +1,13 @@
-import ControlledFormResult from '../components/ControlledFormResult';
+import Flex from '../UI/Flex';
+import FormResult from '../components/FormResults';
+import styles from './styles.module.css';
 
 function MainPage() {
   return (
-    <div>
-      <ControlledFormResult />
-    </div>
+    <Flex justify="space-evenly" className={styles.mainFlex}>
+      <FormResult controlled={true} />
+      <FormResult controlled={false} />
+    </Flex>
   );
 }
 

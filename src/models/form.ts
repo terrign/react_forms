@@ -8,6 +8,4 @@ export interface FormTypes extends FieldValues {
   confirmPassword: string;
   acceptTC: boolean;
   gender: 'male' | 'female' | 'helicopter' | string;
-  country?: string;
-  image?: string;
 }
