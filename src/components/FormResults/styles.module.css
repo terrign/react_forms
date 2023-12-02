@@ -1,0 +1,13 @@
+.image {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.formResult p {
+  margin: 0;
+}

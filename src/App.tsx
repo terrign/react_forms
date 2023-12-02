@@ -1,7 +1,13 @@
-import './App.css';
+import { Provider } from 'react-redux';
+import Router from './router';
+import store from './store';
 
 function App() {
-  return <div>App</div>;
+  return (
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  );
 }
 
 export default App;
